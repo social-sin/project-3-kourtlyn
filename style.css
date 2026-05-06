@@ -1,0 +1,433 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: #52322c;
+  line-height: 1.4;
+  font-size: 16pt;
+  background-color: #f6f3ee;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+}
+
+header {
+  width: 100%;
+  height: 15%;
+  padding: 1.1rem 2rem 1rem;
+  text-align: center;
+  border-top: 1.5rem solid #e8dcca;
+}
+
+.logo {
+  max-width: 4rem;
+  min-width: 2rem;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem auto;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  max-width: 40vw;
+  border-top: 2px solid #52322c;
+  padding: 1rem 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #52322c;
+  transition: border-bottom 100ms ease-in;
+}
+
+nav a:hover {
+  border-bottom: 5px solid #95b7bf;
+}
+
+main {
+  text-align: center;
+  margin: auto;
+}
+
+/* HOME PAGE SELECTORS */
+.hero {
+  background-image: url("./assets/tea-plate.png");
+      /*linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255,0.5)); */
+      /* url("https://i.pinimg.com/1200x/09/a5/7b/09a57b9902332e20c0a6024b99878937.jpg"); */
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: auto;
+  height: 80vw;
+}
+
+.tea-party {
+  padding-top: 25vw;
+  width: 45vw;
+}
+
+/* ✨ THIS is the drawing stroke */
+.mask-stroke {
+  fill: none;
+  stroke: white;           /* reveals artwork */
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* animation */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* .hero h1 {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 10vw;
+  margin: 2rem 3rem;
+  padding-top: 25vw;
+} */
+
+.hero h2 {
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  font-size: 1.75vw;
+  text-transform: uppercase;
+  max-width: 40vw;
+  min-width: 200px;
+  margin: 1rem auto 3rem;
+  padding-bottom: 5rem;
+}
+
+.details h3 {
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  max-width: 40vw;
+  min-width: 30vw;
+  margin: 1rem auto;
+}
+
+.details {
+  width: 75vw;
+  margin: 6rem auto 1rem auto;
+}
+
+.details p {
+  margin: 1rem;
+}
+
+.button {
+  width: 75vw;
+  margin: 5rem auto;
+}
+
+.button a {
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: #95b7bf;
+  padding: 1rem 1.5rem;
+  border-radius: 10rem;
+  color: #f6f3ee;
+  transition: font-size 300ms ease-in;
+}
+
+.button a:hover {
+  font-size: 1.5rem;
+}
+
+/* SCHEDULE PAGE SELECTORS */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+h1 {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 5rem;
+  margin: 5rem 0 1rem;
+}
+
+h2 {
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  margin: 1rem auto 5rem;
+  max-width: 30rem;
+}
+
+.main-content {
+  width: 75vw;
+  margin: auto;
+}
+
+.schedule-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+
+.schedule-item {
+  background-color: #95b7bf;
+  margin-bottom: 1rem; 
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 15px solid #6997A5;
+  max-width: 26rem;
+  min-width: 360px;
+}
+
+h4 {
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.schedule-item p {
+  font-size: 0.75rem;
+  text-align: left;
+  margin-top: 0.25rem;
+}
+
+/* ABOUT PAGE SELECTORS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(275px, 1fr));
+  gap: 3rem;
+  justify-items: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 450px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.flip-card-back {
+  background-color: #EBCB9D;
+  padding: 1rem;
+  border-radius: 10px;
+  transform: rotateY(180deg);
+}
+
+#card-1-front {
+  background-image: url("./assets/Lindsey-61.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#card-2-front {
+  background-image: url("./assets/Lindsey-113.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+#card-3-front {
+  background-image: url("./assets/Lindsey-165.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+#card-4-front {
+  background-image: url("./assets/Lindsey-21.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.flip-card h3 {
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.flip-card p {
+  font-size: 0.85rem;
+  text-align: left;
+  margin-top: 0.75rem;
+}
+
+/* FOOTER STYLES */
+footer {
+  background-color: #e8dcca;
+  margin-top: 10rem;
+  padding: 2rem 1.5rem 1rem;
+}
+
+.rights {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.sources a:link {
+  color: #52322c;
+}
+
+.sources a:visited {
+  color: #844D48;
+}
+
+.sources a:hover {
+  font-weight: 400;
+}
+
+.sources a:active {
+  text-decoration: underline;
+}
+
+footer a {
+  font-size: 0.75rem;
+  color: #52322c;
+  font-weight: 700;
+  text-decoration: none;
+  padding-right: 1rem;
+}
+
+@media (max-width: 840px) {
+    .schedule-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .events {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    footer {
+      margin-top: 5rem;
+    }
+    
+    .details h3 {
+      max-width: 50vw;
+    }
+    
+    h1 {
+      margin-top: 3rem;
+    }
+}
+
+@media (max-width: 710px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    
+    nav {
+      max-width: 50vw;
+      font-size: 3.5vw;
+    }
+    
+    h1 {
+      font-size: 16vw;
+    }
+    
+    h2 {
+      font-size: 3vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+      font-size: 2.5rem;
+      padding-top: 0;
+    }
+    
+    .tea-party {
+      padding-top: 3vh;
+      width: 250px
+    }
+    
+    .hero h2 {
+      font-size: 0.75rem;
+      max-width: 75vw;
+      padding-bottom: 1rem;
+    }
+    
+    .hero {
+      background-image: none;
+      height: auto;
+    }
+    
+    .details {
+      margin: 1rem auto;
+    }
+    
+    .details h3 {
+      font-size: 1.25rem;
+      max-width: 75vw;
+    }
+    
+    .schedule-grid {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .schedule-item {
+      min-width: 200px;
+    }
+    
+    .button {
+      font-size: 5vw;
+    }
+    
+    .button a {
+      transition: none;
+    }
+    
+    .button a:hover {
+      font-size: 5vw;
+    }
+    
+    .sources {
+      display: flex;
+      flex-direction: column;
+    }
+}
